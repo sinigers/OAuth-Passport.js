@@ -10,7 +10,11 @@ passport.use(
     clientSecret: keys.google.clientSecret
     // clientID: /* add your client ID here */,
     // clientSecret: /* add your client secret here */
-}, () => {
-    //passort callback function
+}, (accessToken, refreshToken, profile, done) => {
+    //accessToken -recieved from google, refereshToken - not to espire, profile - information of user
+    
+    // passport callback function
+    console.log('passport callback function fired:');
+    console.log(profile);
 })
-)
+);
