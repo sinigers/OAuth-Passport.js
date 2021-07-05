@@ -20,7 +20,9 @@ router.get('/google', passport.authenticate('google', {
 
 //call back for google to redirect after log in
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    res.send('you reached the redirect URI');
+    //req.user- object with usser infro from google
+    // res.send(req.user);
+    res.redirect('/profile/')
 });
 
 module.exports = router;
